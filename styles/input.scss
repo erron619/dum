@@ -1,0 +1,55 @@
+@import "../utils.scss";
+@layer components {
+    .ui-input {
+        @apply h-10 overflow-hidden rounded-lg border-1 border-neutral-2 flex transition-all;
+        &:focus-within {
+            @apply bg-neutral-1;
+        }
+        input {
+            @apply grow outline-none bg-transparent placeholder:text-neutral-4 text-sm font-regular;
+            &:first-child {
+                @apply pl-4;
+            }
+            &:last-child {
+                @apply pr-4;
+            }
+        }
+        .ui-input-counter, 
+        .ui-input-icon, 
+        .ui-input-eye {
+            @apply shrink-0 aspect-square h-full flex-center;
+        }
+        .ui-input-icon {
+            svg {
+                @apply w-4;
+            }
+        }
+        .ui-input-counter {
+            @apply text-xs font-regular select-none text-neutral-4 open:text-primary-3;
+        }
+        .ui-input-eye {
+            @apply hover:bg-neutral-1 rounded-l-lg transition-all outline-none;
+            svg {
+                @apply w-4;
+            }
+            svg:first-child {
+                @apply hidden;
+            }
+            svg:last-child {
+                @apply block;
+            }
+            &[open] svg:first-child {
+                @apply block;
+            }
+            &[open] svg:last-child {
+                @apply hidden;
+            }
+        }
+        &[ui-invalid=true] {
+            @apply border-primary-3;
+            input, .ui-input-icon {
+                @apply text-primary-3;
+            }
+        }
+    }
+}

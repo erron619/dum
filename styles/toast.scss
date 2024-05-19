@@ -1,0 +1,46 @@
+@import "../utils.scss";
+@layer components {
+    #ui-toast {
+        @apply fixed bottom-8 right-8 z-layerToast w-96 open:opacity-100 open:visible opacity-0 invisible transition-all;
+        .ui-toast-item {
+            @apply absolute inset-x-0 p-4 space-y-2 bg-neutral-0 rounded-lg border-1 border-neutral-2 shadow-lg shadow-neutral-9/10;
+            @apply open:translate-x-0 open:opacity-100 translate-x-8 opacity-0 transition-all duration-300;
+            &[ui-order="-1"] {
+                @apply -bottom-4 scale-100 z-10 opacity-0;
+            }
+            &[ui-order="0"] {
+                @apply bottom-0 scale-100 z-0;
+            }
+            &[ui-order="1"] {
+                @apply bottom-4 scale-95 -z-10;
+            }
+            &[ui-order="2"] {
+                @apply bottom-8 scale-90 -z-20;
+            }
+        }
+        &:hover {
+            @apply flex flex-col gap-2 justify-end;
+            & .ui-toast-item {
+                @apply static z-0 scale-100;
+            }
+            & .ui-toast-item-desc {
+                @apply line-clamp-none;
+            }
+        }
+        .ui-toast-item-header {
+            @apply flex items-center gap-2;
+        }
+        .ui-toast-item-title {
+            @apply grow line-clamp-1 font-semiBold text-sm;
+        }
+        .ui-toast-item-closer {
+            @apply shrink-0 w-6 h-6 flex-center rounded-full hover:bg-neutral-1 transition-all;
+            svg {
+                @apply w-4;
+            }
+        }
+        .ui-toast-item-desc {
+            @apply line-clamp-2 text-xs text-neutral-6;
+        }
+    }
+}

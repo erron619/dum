@@ -1,0 +1,102 @@
+@import "../utils.scss";
+@layer components {
+    .ui-table {
+        @apply relative w-full text-neutral-9 bg-neutral-0 rounded-lg overflow-y-auto border-1 border-neutral-2;
+        table {
+            @apply relative w-full;
+        }
+        // select _____________________________________________
+        .ui-table-cell-select {
+            @apply min-w-12 w-12 sticky left-0 bg-neutral-0 z-20;
+            .ui-checkbox {
+                @apply mx-auto;
+            }
+        }
+        // more _______________________________________________
+        .ui-table-cell-more {
+            @apply min-w-12 w-12 bg-neutral-0 sticky right-0 z-20;
+        }
+        td.ui-table-cell-more button {
+            @apply mx-auto block shrink-0 opacity-0 open:opacity-100;
+            svg {
+                @apply w-5;
+            }
+        }
+        tr:hover td.ui-table-cell-more button {
+            @apply opacity-100;
+        }
+        // inside _____________________________________________
+        .ui-table-cell-inside {
+            @apply overflow-hidden;
+        }
+        th .ui-table-cell-inside,
+        .ui-table-cell-select .ui-table-cell-inside {
+            @apply pr-0 flex items-center justify-between;
+        }
+        // header _____________________________________________
+        thead th {
+            @apply min-w-48 sticky top-0 z-10 bg-neutral-0 h-12 border-b-1 border-neutral-2;
+        }
+        .ui-table-cell-header-text {
+            @apply line-clamp-1 text-left text-sm font-medium leading-6 text-neutral-4;
+        }
+        .ui-table-cell-header-controls {
+            @apply shrink-0 flex items-center;
+        }
+        .ui-table-cell-header-resizer {
+            @apply w-4 h-4 cursor-ew-resize;
+        }
+        // record _____________________________________________
+        tbody td  {
+            @apply min-w-0 overflow-hidden h-16;
+        }
+        tbody tr:hover td {
+            @apply bg-neutral-1;
+        }
+        .ui-table-cell-record-string {
+            @apply w-fit line-clamp-1 text-start font-regular text-sm;
+        }
+        .ui-table-cell-record-number {
+            @apply w-fit line-clamp-1 text-sm font-medium text-primary-4;
+        }
+        .ui-table-cell-record-link {
+            @apply w-fit line-clamp-1 text-start text-sm font-regular text-primary-1 underline underline-offset-4;
+        }
+        .ui-table-cell-record-icon {
+            @apply shrink-0 w-5;
+        }
+        .ui-table-cell-record-boolean {
+            @apply w-fit text-sm font-medium;
+            &[ui-value=true] {
+                @apply text-primary-2;
+            }
+            &[ui-value=false] {
+                @apply text-primary-3;
+            }
+        }
+        .ui-table-cell-record-date {
+            @apply flex items-center gap-2 w-fit font-medium text-neutral-5 bg-neutral-2 rounded-full p-1 pr-4;
+            div {
+                @apply line-clamp-1 text-xs;
+            }
+            svg {
+                @apply w-5;
+            }
+        }
+        .ui-table-cell-record-enum {
+            @apply w-fit h-7 flex items-center px-3 text-xs font-medium rounded-full line-clamp-1;
+            &[ui-color="0"] {
+                @apply bg-secondary-2/50 text-primary-4;
+            }
+            &[ui-color="1"] {
+                @apply bg-secondary-4/50 text-primary-2;
+            }
+            &[ui-color="2"] {
+                @apply bg-secondary-1/50 text-primary-3;
+            }
+            &[ui-color="3"] {
+                @apply bg-secondary-3/50 text-primary-1;
+            }
+        }
+    }
+}

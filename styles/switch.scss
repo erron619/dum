@@ -1,0 +1,27 @@
+@import "../utils.scss";
+@layer components {
+    .ui-switch {
+        @apply w-fit flex items-center gap-2 select-none;
+        input {
+            @apply hidden;
+        }
+        .ui-switch-button {
+            @apply shrink-0 relative cursor-pointer h-5 w-10 rounded-full bg-neutral-3 transition-all;
+            div {
+                @apply absolute top-0 left-0 right-auto w-5 h-5 shadow-lg shadow-neutral-9/10 bg-neutral-0 border-2 border-neutral-3 rounded-full transition-all;
+            }
+        }
+        .ui-switch-text {
+            @apply grow text-sm font-medium text-neutral-9 leading-none;
+        }
+        input:checked ~ .ui-switch-button {
+            @apply bg-neutral-9;
+            div {
+                @apply left-full -translate-x-full border-neutral-9;
+            }
+        }
+        .ui-switch-button, .ui-switch-text {
+            @apply cursor-pointer;
+        }
+    }
+}

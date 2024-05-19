@@ -1,0 +1,27 @@
+@import "../utils.scss";
+@layer components {
+    .ui-dropdown {
+        @apply fixed z-layerDropdown rounded-lg overflow-hidden min-w-48 border-1 border-neutral-2 bg-neutral-0 shadow-lg shadow-neutral-9/10 divide-y-1 divide-neutral-2;
+        .ui-dropdown-group {
+            @apply p-1;
+        }
+        .ui-dropdown-button {
+            @apply w-full flex items-center gap-2 p-2 text-sm font-medium hover:bg-neutral-1 rounded-lg transition-all;
+            &[ui-type=default] {
+                @apply text-neutral-9;
+            }
+            &[ui-type=danger] {
+                @apply text-primary-3;
+            }
+            &:disabled {
+                @apply text-opacity-50 hover:bg-transparent;
+            }
+            svg {
+                @apply w-4;
+            }
+            div {
+                @apply line-clamp-1;
+            }
+        }
+    }
+}

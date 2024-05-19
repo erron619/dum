@@ -1,0 +1,23 @@
+@import "../utils.scss";
+@layer components {
+    .ui-modal {
+        @apply absolute inset-0 p-4 flex-center;
+        .ui-modal-base {
+            @apply h-fit w-full p-4 flex flex-col gap-8 bg-neutral-0 rounded-lg shadow-lg shadow-neutral-9/10;
+            max-width: 48rem;
+            max-height: 32rem;
+        }
+        .ui-modal-header {
+            @apply shrink-0 flex items-center justify-between;
+        }
+        .ui-modal-title {
+            @apply font-semiBold text-lg leading-none;
+        }
+        .ui-modal-body {
+            @apply grow overflow-x-hidden overflow-y-auto scrollbar-none;
+        }
+        .ui-modal-footer {
+            @apply shrink-0 flex items-center gap-2 justify-end;
+        }
+    }
+}

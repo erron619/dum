@@ -1,0 +1,7 @@
+@import "../utils.scss";
+@layer components {
+    #ui-frontScreen {
+        @apply fixed z-layerFrontScreen inset-0 flex bg-black/80 backdrop-blur-sm transition-all;
+        @apply open:visible open:opacity-100 opacity-0 invisible;
+    }
+}

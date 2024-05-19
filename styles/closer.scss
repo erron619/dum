@@ -1,0 +1,9 @@
+@import "../utils.scss";
+@layer components {
+    .ui-closer {
+        @apply shrink-0 w-6 h-6 flex-center rounded-full hover:bg-neutral-1 transition-all;
+        svg {
+            @apply w-4;
+        }
+    }
+}

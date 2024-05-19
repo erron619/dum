@@ -1,0 +1,7 @@
+@import "../utils.scss";
+@layer components {
+    #ui-tooltip {
+        @apply fixed z-layerTooltip rounded-lg p-2 max-w-64 text-neutral-9 text-xs font-regular border-1 border-neutral-2 bg-neutral-1 shadow-lg shadow-neutral-9/10;
+        @apply translate-y-0 open:translate-y-1 opacity-0 open:opacity-100 invisible open:visible transition-all duration-100;
+    }
+}

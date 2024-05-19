@@ -1,0 +1,49 @@
+@import "../utils.scss";
+@layer components {
+    .ui-panel {
+        @apply wh-full rounded-lg border-1 bg-neutral-0 border-neutral-2 flex overflow-hidden;
+        // sidebar ____________________________________________
+        .ui-panel-sidebar {
+            @apply relative shrink-0 border-r-1 border-neutral-2 h-full w-36 min-w-36 max-w-96 overflow-hidden flex flex-col divide-y-1 divide-neutral-2;
+        }
+        .ui-panel-sidebar-resizer {
+            @apply absolute z-20 -right-2 inset-y-0 w-4 opacity-0 cursor-ew-resize;
+        }
+        .ui-panel-sidebar-body {
+            @apply grow overflow-y-auto overflow-x-hidden scrollbar-none divide-y-1 divide-neutral-2;
+        }
+        .ui-panel-sidebar-header,
+        .ui-panel-sidebar-footer {
+            @apply shrink-0;
+        }
+        .ui-panel-sidebar-group,
+        .ui-panel-sidebar-header,
+        .ui-panel-sidebar-footer {
+            @apply p-2 space-y-1;
+        }
+        .ui-panel-sidebar-button {
+            @apply pl-2 pr-4 h-10 w-full rounded-lg flex items-center gap-2 text-sm font-medium transition-all;
+            @apply open:bg-neutral-9 bg-neutral-0 hover:[&:not([open])]:bg-neutral-1 open:text-neutral-0 text-neutral-9;
+            svg {
+                @apply w-4;
+            }
+            div {
+                @apply line-clamp-1 text-left;
+            }
+        }
+        // body _______________________________________________
+        .ui-panel-body {
+            @apply grow relative flex flex-col overflow-hidden;
+        }
+        .ui-panel-body-header,
+        .ui-panel-sidebar-logo {
+            @apply shrink-0 h-14 w-full flex items-center gap-2 pl-4 text-xl font-bold text-neutral-9 bg-neutral-0 border-b-1 border-neutral-2;
+            svg {
+                @apply w-5;
+            }
+        }
+        .ui-panel-body-content {
+            @apply grow p-2 overflow-y-auto overflow-x-hidden;
+        }
+    }
+}

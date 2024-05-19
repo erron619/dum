@@ -1,0 +1,21 @@
+@import "../utils.scss";
+@layer components {
+    .ui-pagination {
+        @apply flex items-center gap-1 shrink-0;
+        .ui-pagination-page {
+            @apply shrink-0 flex-center min-w-10 h-10 px-2 rounded-lg open:border-1 bg-neutral-0 hover:bg-neutral-1 border-neutral-2 text-sm font-medium transition-all;
+        }
+        .ui-pagination-dots {
+            @apply shrink-0 flex-center w-10 h-10 bg-neutral-0;
+            svg {
+                @apply w-5;
+            }
+        }
+        .ui-pagination-controler {
+            @apply h-10 px-4 flex items-center gap-2 rounded-lg hover:bg-neutral-1 bg-neutral-0 text-sm font-medium transition-all;
+            svg {
+                @apply w-3;
+            }
+        }
+    }
+}

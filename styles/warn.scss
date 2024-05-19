@@ -1,0 +1,30 @@
+@import "../utils.scss";
+@layer components {
+    .ui-warn {
+        @apply hidden open:flex items-start gap-2 rounded-lg p-2 pr-4 w-fit;
+        svg {
+            @apply w-5 hidden;
+        }
+        div {
+            @apply text-sm grow;
+        }
+        &[ui-type=default] {
+            @apply text-neutral-4 bg-neutral-1;
+            .ui-warn-icon-default {
+                @apply block;
+            }
+        }
+        &[ui-type=danger] {
+            @apply text-primary-3 bg-secondary-1/20;
+            .ui-warn-icon-danger {
+                @apply block;
+            }
+        }
+        &[ui-type=success] {
+            @apply text-primary-2 bg-secondary-4/20;
+            .ui-warn-icon-success {
+                @apply block;
+            }
+        }
+    }
+}

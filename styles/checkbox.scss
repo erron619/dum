@@ -1,0 +1,24 @@
+@import "../utils.scss";
+@layer components {
+    .ui-checkbox {
+        @apply w-fit flex items-center gap-2 select-none;
+        input {
+            @apply hidden;
+        }
+        .ui-checkbox-button {
+            @apply shrink-0 w-4 h-4 border-1 border-neutral-9 rounded-[0.25rem] bg-neutral-0;
+            svg {
+                @apply wh-full text-neutral-0;
+            }
+        }
+        .ui-checkbox-text {
+            @apply grow text-sm font-medium text-neutral-9 leading-none;
+        }
+        input:checked ~ .ui-checkbox-button {
+            @apply bg-neutral-9;
+        }
+        .ui-checkbox-button, .ui-checkbox-text {
+            @apply cursor-pointer;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@import "../utils.scss";
+@layer components {
+    .ui-loadingScreen {
+        @apply wh-full flex-center;
+        .ui-spinner {
+            @apply w-6;
+        }
+    }
+}

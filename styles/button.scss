@@ -1,0 +1,45 @@
+@import "../utils.scss";
+@layer components {
+    .ui-button {
+        @apply shrink-0 px-4 h-10 w-fit rounded-lg flex items-center gap-2 bg-transparent transition-all;
+        svg {
+            @apply w-4;
+        }
+        div {
+            @apply text-sm font-medium line-clamp-1 text-start;
+        }
+        .ui-spinner {
+            @apply hidden;
+        }
+        &[ui-type=primary] {
+            @apply bg-primary-1 text-neutral-1;
+        }
+        &[ui-type=secondary] {
+            @apply bg-neutral-9 text-neutral-1;
+        }
+        &[ui-type=danger] {
+            @apply bg-primary-3 text-neutral-1;
+        }
+        &[ui-type=outline] {
+            @apply hover:bg-neutral-1 border-1 border-neutral-2;
+        }
+        &[ui-type=ghost] {
+            @apply hover:bg-neutral-1;
+        }
+        &[ui-type=link] {
+            @apply px-0 hover:underline;
+        }
+        &[ui-loading=true] {
+            @apply cursor-progress;
+            .ui-spinner {
+                @apply block;
+            }
+        }
+        &:disabled {
+            @apply bg-neutral-1 hover:bg-neutral-1 text-neutral-5 cursor-not-allowed;
+            &[ui-type=link] {
+                @apply hover:bg-transparent underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@import "../utils.scss";
+@layer components {
+    .ui-iconButton {
+        @apply shrink-0 w-10 h-10 flex-center;
+        @apply bg-transparent text-neutral-9 transition-all;
+        svg {
+            @apply w-4;
+        }
+        &[data-ui-type=primary] {
+            @apply bg-primary-1 text-neutral-1;
+        }
+        &[data-ui-type=secondary] {
+            @apply bg-neutral-9 text-neutral-1;
+        }
+        &[data-ui-type=danger] {
+            @apply bg-primary-3 text-neutral-1;
+        }
+        &[data-ui-type=outline] {
+            @apply hover:bg-neutral-1 border-2 border-neutral-2;
+        }
+        &[data-ui-type=ghost] {
+            @apply hover:bg-neutral-1;
+        }
+        &:disabled {
+            @apply bg-neutral-1 hover:bg-neutral-1 text-neutral-5 cursor-not-allowed;
+        }
+        &[data-ui-round=false] {
+            @apply rounded-lg;
+        }
+        &[data-ui-round=true] {
+            @apply rounded-full;
+        }
+    }
+}
